@@ -78,7 +78,7 @@ public class PackedMemoryArray<T extends Serializable> {
 		while (depth >= 0) {
 			long start = rangeFrom / divisor * divisor;
 			if (start == rangeFrom) {
-				for (long i = rangeTo + 1; i < rangeTo + divisor; i++)
+				for (long i = rangeTo + 1; i < start + divisor; i++)
 					count += manager.fetch(i).getCount();
 			} else {
 				for (long i = start; i < rangeFrom; i++)
