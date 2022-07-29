@@ -101,7 +101,7 @@ public class PackedMemoryArray<T extends Serializable> {
 				expand();
 			} else {
 				shrink();
-				long middle = rangeFrom + (rangeTo-rangeFrom);
+				long middle = rangeFrom + (rangeTo-rangeFrom) / 2;
 				for (long i=rangeTo; i>middle; i--)
 					manager.remove(i);
 			}
